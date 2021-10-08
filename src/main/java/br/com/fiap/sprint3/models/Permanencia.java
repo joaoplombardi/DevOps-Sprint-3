@@ -10,7 +10,13 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "TB_PERMANENCIA")
+@SequenceGenerator(name = "permanencia", sequenceName = "SQ_TB_PERMANENCIA", allocationSize = 1)
 public class Permanencia {
+
+    @Id
+    @GeneratedValue(generator = "permanencia", strategy = GenerationType.SEQUENCE)
+    @Column(name = "cd_permanencia")
+    private Long id;
 
     @Column(name = "cd_cliente")
     private Long idCliente;
