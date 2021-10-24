@@ -25,7 +25,7 @@ public class Estacionamento {
     @Column(name = "cd_estacionamento")
     private Long id;
 
-    @Column(name = "nm_nome")
+    @Column(name = "nm_estacionamento")
     private String nome;
 
     @Column(name = "vl_preco")

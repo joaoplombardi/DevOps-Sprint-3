@@ -44,8 +44,8 @@ public class ApiClienteController {
     }
 
     @PutMapping("{id}")
-    @CacheEvict(value = "tasks", allEntries = true)
-    public ResponseEntity<Cliente> atualizaVaga(
+    @CacheEvict(value = "clientes", allEntries = true)
+    public ResponseEntity<Cliente> atualiza(
             @PathVariable Long id,
             @RequestBody Cliente clienteAtualizado
     ){

@@ -27,7 +27,7 @@ public class Pagamento {
     private Long idCliente;
 
     @Column(name = "nr_cartao")
-    private Integer numeroCartao;
+    private String numeroCartao;
 
     @Column(name = "nm_titular")
     private String nomeTitular;
