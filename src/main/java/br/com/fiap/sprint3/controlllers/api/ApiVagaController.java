@@ -49,7 +49,7 @@ public class ApiVagaController {
 
     @PostMapping("iot")
     @JsonDeserialize
-    public ResponseEntity<Vaga> atualizarStatus(@RequestBody String id){
+    public ResponseEntity<Vaga> atualizarStatus(@RequestParam String id){
         System.out.println(id);
         Optional<Vaga> optional = repository.findById(Long.parseLong(id));
         if (optional.isEmpty()){
