@@ -2,6 +2,7 @@ package br.com.fiap.sprint3.controlllers.api;
 
 import br.com.fiap.sprint3.models.Vaga;
 import br.com.fiap.sprint3.repositories.VagaRepository;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -46,10 +47,11 @@ public class ApiVagaController {
     }
 
 
-    @PostMapping("/{id}")
-    public ResponseEntity<Vaga> atualizarStatus(@PathVariable("id") Long id){
+    @PostMapping("iot")
+    @JsonDeserialize
+    public ResponseEntity<Vaga> atualizarStatus(@RequestBody String id){
         System.out.println(id);
-        Optional<Vaga> optional = repository.findById(id);
+        Optional<Vaga> optional = repository.findById(Long.parseLong(id));
         if (optional.isEmpty()){
             return ResponseEntity.notFound().build();
         }
